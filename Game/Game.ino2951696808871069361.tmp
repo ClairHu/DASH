@@ -1,0 +1,27 @@
+#include <delay.h>
+#include <FillPat.h>
+#include <LaunchPad.h>
+#include <OrbitBoosterPackDefs.h>
+#include <OrbitOled.h>
+#include <OrbitOledChar.h>
+#include <OrbitOledGrph.h>
+#include "defines.h"
+
+const int buttonPin = 18;
+int buttonState = 0;
+const int ledPin =  GREEN_LED;
+
+void setup() {
+  Serial.begin(BAUD_RATE);
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLDOWN);
+  oledInit();
+  welcomeScreen();
+  waitForButton();
+  loading();
+  waitForButton();
+}
+
+void loop() {
+  
+}
